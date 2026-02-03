@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RinaWarp Terminal Pro - The First AI You Can Trust to Actually Fix Things. Talk to Rina like ChatGPT. She inspects your system, proves what's wrong, asks before making changes, fixes it safely, and shows you exactly what happened.">
-    <title>RinaWarp Terminal Pro - The First AI You Can Trust to Actually Fix Things</title>
+    <meta name="description" content="RinaWarp Terminal Pro - The First AI You Can Trust to Actually Fix Things">
+    <title>RinaWarp Terminal Pro - Download Now</title>
     <style>
         :root {
             --hot-pink: #ff3366;
@@ -16,7 +16,6 @@
             --darker: #050508;
             --light: #f5f5f7;
             --gray: #8e8e93;
-            --success: #34c759;
         }
 
         * {
@@ -26,60 +25,43 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--black);
             color: var(--light);
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+        a {
+            color: var(--baby-blue);
+            text-decoration: none;
         }
 
-        /* Navigation */
-        nav {
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background: rgba(10, 10, 15, 0.95);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        a:hover {
+            color: var(--hot-pink);
         }
 
-        nav .container {
+        /* Header */
+        header {
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .logo {
             font-size: 24px;
             font-weight: 700;
-            color: var(--light);
-            text-decoration: none;
         }
 
         .logo span {
             color: var(--hot-pink);
         }
 
-        nav ul {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
         nav a {
+            margin-left: 32px;
             color: var(--light);
-            text-decoration: none;
-            font-size: 14px;
             opacity: 0.8;
-            transition: opacity 0.2s;
         }
 
         nav a:hover {
@@ -87,28 +69,24 @@
             color: var(--baby-blue);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            padding: 160px 0 100px;
             text-align: center;
+            padding: 120px 40px 80px;
             background: linear-gradient(180deg, var(--darker) 0%, var(--black) 100%);
         }
 
         .hero h1 {
-            font-size: clamp(36px, 5vw, 64px);
+            font-size: 56px;
             font-weight: 700;
             margin-bottom: 24px;
-            line-height: 1.1;
-            background: linear-gradient(135deg, var(--light) 0%, var(--gray) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            line-height: 1.2;
         }
 
-        .hero .subheadline {
-            font-size: clamp(18px, 2vw, 22px);
+        .hero p {
+            font-size: 20px;
             color: var(--gray);
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto 40px;
         }
 
@@ -116,7 +94,6 @@
             display: flex;
             gap: 16px;
             justify-content: center;
-            flex-wrap: wrap;
         }
 
         .btn {
@@ -125,9 +102,7 @@
             font-size: 16px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
+            display: inline-block;
         }
 
         .btn-primary {
@@ -137,8 +112,6 @@
 
         .btn-primary:hover {
             background: var(--hot-pink-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(255, 51, 102, 0.3);
         }
 
         .btn-secondary {
@@ -151,535 +124,62 @@
             background: rgba(125, 211, 252, 0.2);
         }
 
-        /* Section Styling */
-        section {
-            padding: 80px 0;
-        }
-
-        section h2 {
-            font-size: clamp(28px, 3vw, 42px);
-            margin-bottom: 16px;
-            text-align: center;
-        }
-
-        section .section-sub {
-            text-align: center;
-            color: var(--gray);
-            font-size: 18px;
-            margin-bottom: 48px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Problem Section */
-        .problem {
-            background: var(--darker);
-        }
-
-        .problem-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .problem h3 {
-            font-size: 20px;
-            color: var(--hot-pink);
-            margin-bottom: 16px;
-            text-align: center;
-        }
-
-        .problem p {
-            font-size: 18px;
-            color: var(--gray);
-            margin-bottom: 24px;
-            text-align: center;
-        }
-
-        .problem-list {
-            list-style: none;
-            margin-top: 32px;
-        }
-
-        .problem-list li {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-
-        .problem-list li::before {
-            content: "✕";
-            color: var(--coral);
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        /* Solution Section */
-        .solution {
-            background: var(--black);
-        }
-
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .solution-card {
-            background: rgba(20, 184, 166, 0.05);
-            border: 1px solid rgba(20, 184, 166, 0.2);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s ease;
-        }
-
-        .solution-card:hover {
-            background: rgba(20, 184, 166, 0.1);
-            transform: translateY(-4px);
-            border-color: var(--teal);
-        }
-
-        .solution-card h3 {
-            font-size: 18px;
-            margin-bottom: 12px;
-            color: var(--light);
-        }
-
-        .solution-card p {
-            color: var(--gray);
-            font-size: 15px;
-        }
-
-        /* Live Example Section */
-        .example {
-            background: var(--darker);
-        }
-
-        .example-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .chat-demo {
-            background: #1a1a22;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .chat-demo-header {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 16px 20px;
-            font-size: 14px;
-            color: var(--gray);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .chat-demo-header::before {
-            content: "";
-            width: 10px;
-            height: 10px;
-            background: var(--success);
-            border-radius: 50%;
-        }
-
-        .chat-messages {
-            padding: 24px;
-        }
-
-        .message {
-            margin-bottom: 20px;
-            display: flex;
-            gap: 12px;
-        }
-
-        .message-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-
-        .message.user .message-avatar {
-            background: var(--hot-pink);
-        }
-
-        .message.rina .message-avatar {
-            background: linear-gradient(135deg, var(--teal) 0%, var(--baby-blue) 100%);
-        }
-
-        .message-content {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 16px;
-            border-radius: 12px;
-            max-width: 85%;
-        }
-
-        .message-content p {
-            margin-bottom: 8px;
-        }
-
-        .message-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .code-block {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 12px;
-            border-radius: 8px;
-            font-family: 'SF Mono', 'Fira Code', monospace;
-            font-size: 13px;
-            overflow-x: auto;
-            margin: 12px 0;
-            border-left: 3px solid var(--hot-pink);
-        }
-
-        /* Replaces Section */
-        .replaces {
-            background: var(--black);
-        }
-
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-        }
-
-        .comparison-item {
-            text-align: center;
-            padding: 24px;
-        }
-
-        .comparison-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(255, 51, 102, 0.1);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 24px;
-        }
-
-        .comparison-item h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .comparison-item p {
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        /* Who It's For */
-        .audience {
-            background: var(--darker);
-        }
-
-        .audience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-        }
-
-        .audience-card {
-            background: rgba(125, 211, 252, 0.05);
-            border: 1px solid rgba(125, 211, 252, 0.2);
-            border-radius: 12px;
-            padding: 24px;
-            text-align: center;
-        }
-
-        .audience-card h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-
-        .audience-card p {
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        /* Trust Section */
-        .trust {
-            background: var(--black);
-        }
-
-        .trust-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .trust-promise {
-            background: rgba(52, 199, 89, 0.1);
-            border: 1px solid rgba(52, 199, 89, 0.3);
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 32px;
-        }
-
-        .trust-promise h3 {
-            color: var(--success);
-            font-size: 20px;
-            margin-bottom: 16px;
-        }
-
-        .trust-promise ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 12px;
-        }
-
-        .trust-promise li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 15px;
-        }
-
-        .trust-promise li::before {
-            content: "✓";
-            color: var(--success);
-            font-weight: bold;
-        }
-
-        .trust-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-        }
-
-        .trust-feature {
-            text-align: center;
-            padding: 24px;
-        }
-
-        .trust-feature-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(255, 107, 107, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 20px;
-        }
-
-        .trust-feature h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-
-        .trust-feature p {
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            background: var(--darker);
-        }
-
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .pricing-header h2 {
-            font-size: clamp(32px, 4vw, 48px);
-            margin-bottom: 16px;
-        }
-
-        .pricing-header p {
-            font-size: 18px;
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .pricing-tier-header {
-            text-align: center;
-            margin: 48px 0 24px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .pricing-tier-header:first-of-type {
-            margin-top: 0;
-            padding-top: 0;
-            border-top: none;
-        }
-
-        .pricing-tier-header h3 {
-            font-size: 28px;
-            margin-bottom: 8px;
-            color: var(--baby-blue);
-        }
-
-        .pricing-tier-header p {
-            color: var(--gray);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+        /* Value Props */
+        .value-props {
+            padding: 80px 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 32px;
+        .value-props h2 {
             text-align: center;
-            transition: all 0.3s ease;
+            font-size: 36px;
+            margin-bottom: 48px;
         }
 
-        .pricing-card:hover {
-            transform: translateY(-4px);
+        .props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
         }
 
-        .pricing-card.featured {
-            background: rgba(255, 51, 102, 0.1);
-            border-color: var(--hot-pink);
+        .prop-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px;
         }
 
-        .pricing-card.featured:hover {
-            border-color: var(--hot-pink-dark);
-        }
-
-        .pricing-card h3 {
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
-
-        .pricing-card .price {
-            font-size: 48px;
-            font-weight: 700;
-            margin: 24px 0;
+        .prop-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
             color: var(--baby-blue);
         }
 
-        .pricing-card .price span {
-            font-size: 18px;
+        .prop-card p {
             color: var(--gray);
-            font-weight: 400;
+            font-size: 15px;
         }
 
-        .pricing-card .description {
-            color: var(--gray);
-            font-size: 14px;
-            margin-bottom: 24px;
-            min-height: 40px;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin: 32px 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .pricing-features li::before {
-            content: "✓";
-            color: var(--teal);
-            font-weight: bold;
-        }
-
-        .pricing-card .btn {
-            width: 100%;
-        }
-
-        .pricing-card .btn.featured {
-            background: var(--hot-pink);
-        }
-
-        .pricing-card .btn.featured:hover {
-            background: var(--hot-pink-dark);
-        }
-
-        /* Pricing Footnote */
-        .pricing-footnote {
-            max-width: 800px;
-            margin: 48px auto 0;
-            padding: 24px;
+        /* Trust Banner */
+        .trust-banner {
             background: rgba(52, 199, 89, 0.1);
-            border: 1px solid rgba(52, 199, 89, 0.3);
-            border-radius: 12px;
+            border-top: 1px solid rgba(52, 199, 89, 0.3);
+            border-bottom: 1px solid rgba(52, 199, 89, 0.3);
+            padding: 24px 40px;
             text-align: center;
         }
 
-        .pricing-footnote p {
-            font-size: 14px;
-            color: var(--gray);
-        }
-
-        .pricing-footnote strong {
+        .trust-banner p {
             color: var(--success);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--hot-pink) 0%, var(--coral) 100%);
-            text-align: center;
-            padding: 100px 0;
-        }
-
-        .cta-section h2 {
-            font-size: clamp(32px, 4vw, 48px);
-            margin-bottom: 16px;
-        }
-
-        .cta-section p {
-            font-size: 18px;
-            opacity: 0.9;
-            margin-bottom: 32px;
-        }
-
-        .cta-section .btn {
-            background: white;
-            color: var(--hot-pink);
-            font-size: 18px;
-            padding: 20px 48px;
-        }
-
-        .cta-section .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            font-size: 14px;
         }
 
         /* Footer */
         footer {
-            background: var(--darker);
-            padding: 40px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        footer .container {
+            padding: 40px;
             text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         footer p {
@@ -687,448 +187,60 @@
             font-size: 14px;
         }
 
-        footer .footer-promise {
-            color: var(--success);
-            margin-top: 12px;
-            font-size: 14px;
-        }
-
-        footer .footer-links {
-            margin-top: 20px;
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
         footer a {
-            color: var(--gray);
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        footer a:hover {
             color: var(--baby-blue);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            
-            .hero {
-                padding: 120px 0 60px;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            .message-content {
-                max-width: 100%;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">Rina<span>Warp</span></a>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="download.html">Download</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <a href="index.html" class="logo">Rina<span>Warp</span></a>
+        <nav>
+            <a href="features.html">Features</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="download.html">Download</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
     <section class="hero">
-        <div class="container">
-            <h1>The First AI You Can Trust to Actually Fix Things</h1>
-            <p class="subheadline">Talk to Rina like ChatGPT. She inspects your system, proves what's wrong, asks before making changes, fixes it safely, and shows you exactly what happened.</p>
-            <div class="cta-group">
-                <a href="download.html" class="btn btn-primary">Download RinaWarp Terminal Pro</a>
-                <a href="features.html" class="btn btn-secondary">Watch a live fix (2 min)</a>
-            </div>
+        <h1>The First AI You Can Trust<br>to Actually Fix Things</h1>
+        <p>Talk to Rina like ChatGPT. She inspects your system, proves what's wrong, asks before making changes, fixes it safely, and shows you exactly what happened.</p>
+        <div class="cta-group">
+            <a href="download.html" class="btn btn-primary">Download Now</a>
+            <a href="features.html" class="btn btn-secondary">See Features</a>
         </div>
     </section>
 
-    <section class="problem" id="problem">
-        <div class="container">
-            <div class="problem-content">
-                <h3>Most AI tools talk.<br>Most terminals execute.<br>Neither are safe enough to do both.</h3>
-                <p>Developers and power users are stuck bouncing between tools, scripts, terminals, and guesswork.</p>
-                <ul class="problem-list">
-                    <li>ChatGPT explains but can't act</li>
-                    <li>Automation tools act but can't be trusted</li>
-                    <li>One mistake can destroy a system</li>
-                </ul>
-            </div>
-        </div>
+    <section class="trust-banner">
+        <p>✓ Runs locally ✓ Your data stays on your machine ✓ Nothing executes without your approval</p>
     </section>
 
-    <section class="solution" id="solution">
-        <div class="container">
-            <h2>The RinaWarp Solution</h2>
-            <p class="section-sub">What Rina Does Differently</p>
-            <div class="solution-grid">
-                <div class="solution-card">
-                    <h3>You Describe</h3>
-                    <p>Describe the problem in natural language — just like talking to ChatGPT.</p>
-                </div>
-                <div class="solution-card">
-                    <h3>Rina Inspects</h3>
-                    <p>Rina runs read-only diagnostics to understand your system.</p>
-                </div>
-                <div class="solution-card">
-                    <h3>Evidence First</h3>
-                    <p>She shows you exactly what's wrong with proof and explanations.</p>
-                </div>
-                <div class="solution-card">
-                    <h3>Safe Proposals</h3>
-                    <p>Fixes are ranked by risk — you see what could happen before it happens.</p>
-                </div>
-                <div class="solution-card">
-                    <h3>Your Approval</h3>
-                    <p>Approve in plain language. For risky actions, type YES explicitly.</p>
-                </div>
-                <div class="solution-card">
-                    <h3>Transparent Execution</h3>
-                    <p>Watch commands run live with full output streaming.</p>
-                </div>
-                <div class="solution-card">
-                    <h3>Verified Results</h3>
-                    <p>Rina confirms the fix worked and provides an audit report.</p>
-                </div>
+    <section class="value-props">
+        <h2>Why RinaWarp?</h2>
+        <div class="props-grid">
+            <div class="prop-card">
+                <h3>Natural Conversation</h3>
+                <p>Describe problems in plain English. Rina understands context and provides clear explanations.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="example" id="demo">
-        <div class="container">
-            <h2>Live Example</h2>
-            <p class="section-sub">This is what trust looks like in action</p>
-            <div class="example-container">
-                <div class="chat-demo">
-                    <div class="chat-demo-header">RinaWarp Terminal — Live Session</div>
-                    <div class="chat-messages">
-                        <div class="message user">
-                            <div class="message-avatar">U</div>
-                            <div class="message-content">
-                                <p><strong>You:</strong> My computer is running hot</p>
-                            </div>
-                        </div>
-                        <div class="message rina">
-                            <div class="message-avatar">R</div>
-                            <div class="message-content">
-                                <p>Running safe diagnostics...</p>
-                                <div class="code-block">
-CPU Temperature: 85°C (HIGH)
-Process: chrome using 340% CPU
-Fan speed: 5500 RPM (MAX)
-Battery: 89°C
-                                </div>
-                                <p><strong>Analysis:</strong> Chrome is causing excessive CPU usage, pushing temperatures to unsafe levels. This can degrade hardware over time.</p>
-                                <p><strong>Recommended fix:</strong> Restart Chrome process (safe, non-destructive)</p>
-                                <p><em>If you want me to apply this fix, reply: <code style="color: var(--hot-pink);">run it</code><br>For high-impact actions, type <code style="color: var(--coral);">YES</code>.</em></p>
-                            </div>
-                        </div>
-                        <div class="message user">
-                            <div class="message-avatar">U</div>
-                            <div class="message-content">
-                                <p><strong>You:</strong> run it</p>
-                            </div>
-                        </div>
-                        <div class="message rina">
-                            <div class="message-avatar">R</div>
-                            <div class="message-content">
-                                <p>Executing: <code style="background: rgba(0,0,0,0.5); padding: 4px 8px; border-radius: 4px;">killall Chrome && sleep 2 && open -a Chrome</code></p>
-                                <div class="code-block">
-$ killall Chrome
-Chrome terminated
-$ open -a Chrome
-Chrome launched ✓
-                                </div>
-                                <p><strong>Verification:</strong> CPU temp now 42°C (normal). System restored.</p>
-                                <p>✅ Full audit report saved to: ~/RinaWarp/audit-2024-01-15.log</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="prop-card">
+                <h3>Safe Execution</h3>
+                <p>Every action is explained before execution. High-impact commands require explicit approval.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="replaces">
-        <div class="container">
-            <h2>What RinaWarp Replaces</h2>
-            <p class="section-sub">All the tools you love, without their flaws</p>
-            <div class="comparison-grid">
-                <div class="comparison-item">
-                    <div class="comparison-icon">💬</div>
-                    <h3>ChatGPT</h3>
-                    <p>Natural conversation → Actual execution</p>
-                </div>
-                <div class="comparison-item">
-                    <div class="comparison-icon">⬛</div>
-                    <h3>Warp</h3>
-                    <p>Terminal fluency → AI intelligence</p>
-                </div>
-                <div class="comparison-item">
-                    <div class="comparison-icon">🤖</div>
-                    <h3>Copilot</h3>
-                    <p>Contextual awareness → Full system access</p>
-                </div>
-                <div class="comparison-item">
-                    <div class="comparison-icon">⚡</div>
-                    <h3>Automation Tools</h3>
-                    <p>Blind execution → Verified fixes</p>
-                </div>
+            <div class="prop-card">
+                <h3>Full Transparency</h3>
+                <p>Watch every command as it runs. Complete audit logs show exactly what was done.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="audience" id="audience">
-        <div class="container">
-            <h2>Who It's For</h2>
-            <p class="section-sub">Built for people who manage their own systems</p>
-            <div class="audience-grid">
-                <div class="audience-card">
-                    <h3>🧑‍💻 Developers</h3>
-                    <p>Debug broken environments fast</p>
-                </div>
-                <div class="audience-card">
-                    <h3>🚀 Indie Founders</h3>
-                    <p>Ship faster without sysadmin overhead</p>
-                </div>
-                <div class="audience-card">
-                    <h3>⚡ Power Users</h3>
-                    <p>Automate without risking your system</p>
-                </div>
-                <div class="audience-card">
-                    <h3>🐳 Docker Users</h3>
-                    <p>Manage containers intelligently</p>
-                </div>
-                <div class="audience-card">
-                    <h3>🖥️ Server Admins</h3>
-                    <p>Fix production issues safely</p>
-                </div>
-                <div class="audience-card">
-                    <h3>🔧 System Owners</h3>
-                    <p>Never reinstall your OS again</p>
-                </div>
+            <div class="prop-card">
+                <h3>Local-First</h3>
+                <p>Your system data never leaves your machine. No cloud dependencies, no privacy concerns.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="trust" id="trust">
-        <div class="container">
-            <h2>Trust & Safety</h2>
-            <p class="section-sub">This is your moat — and ours</p>
-            <div class="trust-container">
-                <div class="trust-promise">
-                    <h3>Rina will NEVER:</h3>
-                    <ul>
-                        <li>Run destructive commands without explicit approval</li>
-                        <li>Hide commands or outputs from you</li>
-                        <li>Modify your system silently</li>
-                        <li>Pretend certainty when unsure</li>
-                        <li>Lock you into the cloud</li>
-                        <li>Execute without your knowledge</li>
-                    </ul>
-                </div>
-                <div class="trust-features">
-                    <div class="trust-feature">
-                        <div class="trust-feature-icon">👁️</div>
-                        <h3>Full Visibility</h3>
-                        <p>See every command before it runs</p>
-                    </div>
-                    <div class="trust-feature">
-                        <div class="trust-feature-icon">📺</div>
-                        <h3>Live Streaming</h3>
-                        <p>Watch execution in real-time</p>
-                    </div>
-                    <div class="trust-feature">
-                        <div class="trust-feature-icon">🛑</div>
-                        <h3>Cancel Anytime</h3>
-                        <p>Stop execution instantly</p>
-                    </div>
-                    <div class="trust-feature">
-                        <div class="trust-feature-icon">⌨️</div>
-                        <h3>Explicit YES</h3>
-                        <p>Typed confirmation for risky actions</p>
-                    </div>
-                    <div class="trust-feature">
-                        <div class="trust-feature-icon">📋</div>
-                        <h3>Audit Logs</h3>
-                        <p>Exportable session transcripts</p>
-                    </div>
-                    <div class="trust-feature">
-                        <div class="trust-feature-icon">🏠</div>
-                        <h3>Local First</h3>
-                        <p>Your system stays on your machine</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="pricing-header">
-                <h2>Simple pricing. One installer.</h2>
-                <p>Capabilities unlock by license.</p>
-            </div>
-
-            <!-- Subscriptions -->
-            <div class="pricing-tier-header">
-                <h3>Subscriptions (Monthly)</h3>
-                <p>Flexible access with automatic updates.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Starter</h3>
-                    <div class="price">$29<span>/month</span></div>
-                    <p class="description">Local-first execution with planning and explanations.</p>
-                    <ul class="pricing-features">
-                        <li>Local-first execution</li>
-                        <li>Read-only + safe write tools</li>
-                        <li>Planning & explanations</li>
-                        <li>No destructive actions</li>
-                    </ul>
-                    <a href="pricing.html" class="btn btn-secondary">Get Starter</a>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>Creator</h3>
-                    <div class="price">$69<span>/month</span></div>
-                    <p class="description">Everything in Starter, plus advanced workflows and larger context.</p>
-                    <ul class="pricing-features">
-                        <li>Everything in Starter</li>
-                        <li>Advanced workflows</li>
-                        <li>Larger execution context</li>
-                        <li>Priority updates</li>
-                    </ul>
-                    <a href="pricing.html" class="btn btn-primary featured">Get Creator</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Pro</h3>
-                    <div class="price">$99<span>/month</span></div>
-                    <p class="description">Everything in Creator, plus production deployment actions.</p>
-                    <ul class="pricing-features">
-                        <li>Everything in Creator</li>
-                        <li>Production deployment actions</li>
-                        <li>High-impact tools (with confirmation)</li>
-                        <li>Power-user workflows</li>
-                    </ul>
-                    <a href="pricing.html" class="btn btn-secondary">Get Pro</a>
-                </div>
-            </div>
-
-            <!-- Lifetime Licenses -->
-            <div class="pricing-tier-header">
-                <h3>Lifetime Licenses</h3>
-                <p>Pay once. Own it forever.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Founder</h3>
-                    <div class="price">$699</div>
-                    <p class="description">Lifetime Pro access with early feature access.</p>
-                    <ul class="pricing-features">
-                        <li>Lifetime Pro access</li>
-                        <li>Early feature access</li>
-                        <li>Founding supporter tier</li>
-                    </ul>
-                    <a href="pricing.html" class="btn btn-secondary">Buy Founder License</a>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>Pioneer</h3>
-                    <div class="price">$800</div>
-                    <p class="description">Lifetime Pro access with priority feature access.</p>
-                    <ul class="pricing-features">
-                        <li>Lifetime Pro access</li>
-                        <li>Priority feature access</li>
-                        <li>Long-term support tier</li>
-                    </ul>
-                    <a href="pricing.html" class="btn btn-primary featured">Buy Pioneer License</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Team</h3>
-                    <div class="price">$999</div>
-                    <p class="description">Lifetime Pro access designed for teams and organizations.</p>
-                    <ul class="pricing-features">
-                        <li>Lifetime Pro access</li>
-                        <li>Designed for teams & organizations</li>
-                        <li>Highest support priority</li>
-                    </ul>
-                    <a href="pricing.html" class="btn btn-secondary">Buy Team License</a>
-                </div>
-            </div>
-
-            <div class="pricing-footnote">
-                <p><strong>All tiers use the same RinaWarp agent.</strong><br>
-                Higher tiers unlock additional capabilities — not different intelligence.<br>
-                Nothing executes without your approval.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section" id="download">
-        <div class="container">
-            <h2>Stop guessing.<br>Stop juggling tools.<br>Start fixing things safely.</h2>
-            <p>Join thousands of developers and power users who trust Rina with their systems.</p>
-            <a href="download.html" class="btn">Download RinaWarp Terminal Pro</a>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>© 2024 RinaWarp Technologies. All rights reserved.</p>
-            <p class="footer-promise">✅ RinaWarp operates locally. Your system stays yours. You're always in control.</p>
-            <div class="footer-links">
-                <a href="features.html">Features</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="download.html">Download</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="terms/index.html">Terms</a>
-                <a href="privacy/index.html">Privacy</a>
-            </div>
-        </div>
+        <p>© 2024 RinaWarp Technologies. <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="eula.html">EULA</a></p>
     </footer>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(10, 10, 15, 0.98)';
-            } else {
-                nav.style.background = 'rgba(10, 10, 15, 0.95)';
-            }
-        });
-    </script>
 </body>
 </html>
